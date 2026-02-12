@@ -53,6 +53,7 @@ on:
           # SAP Neo 区域
           - Neo-UAE(Dubai)
           - Neo-KSA(Riyadh)
+          - Neo-JP(Tokyo)
       app_name:
         description: '应用名称（可选，留空则自动生成）'
         required: false
@@ -210,6 +211,11 @@ jobs:
           "Neo-KSA(Riyadh)")
             echo "CF_API=https://api.cf.neo-sa1.hana.ondemand.com" >> $GITHUB_ENV
             echo "APP_NAME=neo-ksa$RANDOM_STR" >> $GITHUB_ENV
+            ;;
+         "Neo-JP(Tokyo)")
+            # 请务必确认下方的 URL 是正确的 SAP 东京 API 地址
+            echo "CF_API=https://api.cf.jp01.hana.ondemand.com" >> $GITHUB_ENV 
+            echo "APP_NAME=neo-jp$RANDOM_STR" >> $GITHUB_ENV
             ;;
         esac
         
